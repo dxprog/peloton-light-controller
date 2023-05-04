@@ -100,11 +100,6 @@ async function checkInProgressWorkout(workoutId) {
             difficulty = Math.round(RESISTANCE_MAX * (value / INCLINE_MAX));
             break;
         }
-        if (metric.name === 'speed' || metric.name === 'cadence') {
-          speed = value;
-        } else if (metric.name === 'incline' || metric.name === 'resistance') {
-          difficulty = value;
-        }
       });
 
       console.log('Speed/difficulty', speed, difficulty);
