@@ -65,6 +65,7 @@ async function checkInProgressWorkout(workoutId) {
 
   if (workout.status === 'COMPLETE') {
     console.log('Workout completed, waiting for workout');
+    await fetch(`http://${exerciseLightsIp}/hsv/0/0/0`);
     setTimeout(waitForWorkout, TIME_TO_WAIT_FOR_WORKOUT);
     return;
   }
