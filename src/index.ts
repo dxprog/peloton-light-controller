@@ -72,7 +72,7 @@ async function checkInProgressWorkout(workoutId) {
   const workoutMetrics = await peloton.getWorkoutMetricsById(workoutId);
   const lastTimeInPedaling = Math.round(Date.now() / 1000) - parseInt(workout.start_time, 10);
 
-  const { target_metrics } = workoutMetrics.target_metrics_performance_data;
+  const { target_metrics } = workoutMetrics?.target_metrics_performance_data;
 
   if (Array.isArray(target_metrics)) {
     let lastMetricSegment = target_metrics.find(metricsSegment => {
